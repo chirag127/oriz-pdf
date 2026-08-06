@@ -1,0 +1,37 @@
+---
+import '../styles/global.css'
+import OzToolShell from '@chirag127/oz-chrome/components/OzToolShell.astro'
+
+interface Props {
+  title?: string
+  description?: string
+}
+const {
+  title = 'oriz-pdf — blueprint PDF toolkit',
+  description = 'Merge, split, rotate, reorder, extract pages/text/images, and convert images to PDF — 100% in your browser. No upload, no signup.',
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://pdf.oriz.in/" />
+  </head>
+  <body>
+    <OzToolShell site="pdf" title="PDF DRAFTING TABLE" wordmarkHref="https://oriz.in">
+      <slot />
+      <Fragment slot="footer">
+        <span class="mono">100% client-side · no upload · no signup</span>
+      </Fragment>
+    </OzToolShell>
+  </body>
+</html>

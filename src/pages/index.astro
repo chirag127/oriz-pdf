@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro'
+import Workbench from '../components/Workbench.tsx'
+import '../styles/workbench.css'
+
+const specs = [
+  { n: '6', l: 'operations' },
+  { n: '0', l: 'uploads' },
+  { n: '0', l: 'signups' },
+  { n: '∞', l: 'files/day' },
+]
+const features = [
+  { h: 'Merge + reorder', p: 'Drag pages across files into one draft on the assembly strip.' },
+  { h: 'Split', p: 'One PDF per N pages, downloaded as a batch.' },
+  { h: 'Rotate', p: 'Per-page rotate right on the card, baked into the output.' },
+  { h: 'Extract pages', p: 'Delete or keep any pages; the strip is your selection.' },
+  { h: 'Extract text', p: 'Text per page + optional AI summary + filename hint.' },
+  { h: 'Extract images', p: 'Pull embedded raster images out as PNG.' },
+  { h: 'Images → PDF', p: 'Drop PNG/JPG, get a page-per-image PDF.' },
+]
+---
+
+<Base>
+  <section class="hero">
+    <span class="hero__badge">blueprint · drafting table</span>
+    <h1>Draft your PDFs. <em>All in the browser.</em></h1>
+    <p class="hero__lead">
+      Merge, split, rotate, reorder, and extract pages, text, or images — plus images→PDF.
+      Nothing leaves your device: every operation runs client-side on a graph-paper drafting table.
+    </p>
+    <div class="hero__specs">
+      {specs.map((s) => (
+        <div class="hero__spec"><b>{s.n}</b><span>{s.l}</span></div>
+      ))}
+    </div>
+  </section>
+
+  <Workbench client:load />
+
+  <section class="features" aria-label="Features">
+    {features.map((f) => (
+      <article class="feature panel">
+        <h3>{f.h}</h3>
+        <p>{f.p}</p>
+      </article>
+    ))}
+  </section>
+</Base>
