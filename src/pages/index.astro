@@ -4,7 +4,7 @@ import Workbench from '../components/Workbench.tsx'
 import '../styles/workbench.css'
 
 const specs = [
-  { n: '6', l: 'operations' },
+  { n: '7', l: 'operations' },
   { n: '0', l: 'uploads' },
   { n: '0', l: 'signups' },
   { n: '∞', l: 'files/day' },
@@ -23,10 +23,10 @@ const features = [
 <Base>
   <section class="hero">
     <span class="hero__badge">blueprint · drafting table</span>
-    <h1>Draft your PDFs. <em>All in the browser.</em></h1>
+    <h1>Free PDF toolkit. <em>All in your browser.</em></h1>
     <p class="hero__lead">
       Merge, split, rotate, reorder, and extract pages, text, or images — plus images→PDF.
-      Nothing leaves your device: every operation runs client-side on a graph-paper drafting table.
+      Every operation runs client-side: no upload, no signup, unlimited files.
     </p>
     <div class="hero__specs">
       {specs.map((s) => (
@@ -37,12 +37,15 @@ const features = [
 
   <Workbench client:load />
 
-  <section class="features" aria-label="Features">
-    {features.map((f) => (
-      <article class="feature panel">
-        <h3>{f.h}</h3>
-        <p>{f.p}</p>
-      </article>
-    ))}
+  <section class="features" aria-label="What you can do">
+    <h2 class="features__title tick">Operations</h2>
+    <div class="features__grid">
+      {features.map((f) => (
+        <article class="feature panel">
+          <h3>{f.h}</h3>
+          <p>{f.p}</p>
+        </article>
+      ))}
+    </div>
   </section>
 </Base>

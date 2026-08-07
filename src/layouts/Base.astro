@@ -7,9 +7,23 @@ interface Props {
   description?: string
 }
 const {
-  title = 'oriz-pdf — blueprint PDF toolkit',
-  description = 'Merge, split, rotate, reorder, extract pages/text/images, and convert images to PDF — 100% in your browser. No upload, no signup.',
+  title = 'oriz-pdf — free PDF merge, split, rotate & convert, no signup',
+  description = 'Free online PDF toolkit — merge, split, rotate, reorder, extract pages, text, or images, and convert images to PDF. 100% in your browser: no upload, no signup, unlimited files.',
 } = Astro.props
+
+const SITE = 'https://pdf.oriz.in/'
+const OG_IMAGE = new URL('icons/icon-512.png', SITE).href
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'oriz-pdf',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  url: SITE,
+  description,
+  browserRequirements: 'Requires JavaScript. Runs entirely client-side.',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+}
 ---
 
 <!doctype html>
@@ -21,13 +35,25 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={SITE} />
+
+    <meta property="og:site_name" content="oriz-pdf" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <link rel="canonical" href="https://pdf.oriz.in/" />
+    <meta property="og:url" content={SITE} />
+    <meta property="og:image" content={OG_IMAGE} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={OG_IMAGE} />
+
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#22d3ee" />
     <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
