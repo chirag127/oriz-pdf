@@ -25,6 +25,7 @@
     "@fontsource-variable/jetbrains-mono": "^5.2.5",
     "@fontsource-variable/space-grotesk": "^5.2.5",
     "@tailwindcss/vite": "^4.3.1",
+    "@vite-pwa/astro": "^1.2.0",
     "astro": "^6.4.8",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^4.10.38",
