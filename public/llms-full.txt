@@ -1,0 +1,81 @@
+# oriz-pdf — free PDF toolkit, 100% in your browser
+
+Live app: https://pdf.oriz.in/
+Source: https://github.com/chirag127/oriz-pdf
+License: MIT
+
+## What it is
+
+oriz-pdf is a free PDF toolkit that runs entirely in your browser. Merge, split, rotate, reorder, extract pages, text, or images, and turn images into a PDF — all on a graph-paper drafting table. It is styled as a blueprint / drafting-table workbench where the page-assembly strip is your live draft.
+
+100% client-side. No upload. No signup. Unlimited files per day. Your files never leave your device; all work happens in the browser via pdf-lib and pdfjs-dist, which are lazy-loaded only when you use a feature.
+
+## Hero
+
+Headline: Free PDF toolkit. All in your browser.
+
+Lead: Merge, split, rotate, reorder, and extract pages, text, or images — plus images to PDF. Every operation runs client-side: no upload, no signup, unlimited files.
+
+Specs: 7 operations · 0 uploads · 0 signups · unlimited files/day.
+
+## Operations
+
+### Merge + reorder
+Drop multiple PDFs. Drag page cards to reorder across files into one draft on the assembly strip. The signature page-assembly strip is your live draft. Export one merged PDF.
+
+### Split
+Split one PDF into one file per N pages, downloaded as a batch.
+
+### Rotate
+Per-page rotate right on the card. The rotation is baked into the output PDF.
+
+### Extract pages
+Delete or keep any pages. The strip is your selection. Export the kept pages as a new PDF.
+
+### Extract text
+Get text per page. Download as a .txt file. Optional AI summary and AI filename suggestion.
+
+### Extract images
+Pull embedded raster images out of a PDF as PNG.
+
+### Images to PDF
+Drop PNG or JPG images and get a page-per-image PDF.
+
+## How it works
+
+1. Drop one or more files onto the drafting table.
+2. Pick an operation; page cards appear on the assembly strip.
+3. Reorder, rotate, or delete cards as needed.
+4. Export — the result downloads straight to your device.
+
+No file is ever uploaded to a server. Every transformation happens locally in your browser.
+
+## AI (optional)
+
+AI is optional polish, provided via the shared @chirag127/oz-ai package (g4f multi-provider failover, no API key). It powers the optional text summary and filename suggestion in Extract text. If every AI provider is down, the core tools still work — AI is never required.
+
+## Tech
+
+- Astro (static site) with React 19 islands.
+- Tailwind CSS v4 for styling.
+- pdf-lib and pdfjs-dist for all PDF operations, lazy-loaded on use.
+- Shared @chirag127/oz-* packages (oz-chrome, oz-file, oz-ai, oz-tokens-base) for the app shell, file handling, AI, and design tokens.
+- PWA-installable (offline-capable service worker).
+- Deployed on Cloudflare Pages at https://pdf.oriz.in/.
+
+## FAQ
+
+Q: Are my files uploaded anywhere?
+A: No. Everything runs client-side in your browser. Files never leave your device.
+
+Q: Do I need an account?
+A: No signup, no login. Just open the site and use it.
+
+Q: Is there a file-size or file-count limit?
+A: No imposed limit — you are bounded only by your device's memory. Unlimited files per day.
+
+Q: Is it free?
+A: Yes, completely free. MIT-licensed open source.
+
+Q: Do I need the internet after loading?
+A: It is a PWA with an offline service worker; once loaded, core PDF operations work offline. The optional AI features need a connection.

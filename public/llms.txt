@@ -1,0 +1,23 @@
+# oriz-pdf
+
+> Free PDF toolkit that runs 100% in your browser — merge, split, rotate, reorder, extract pages/text/images, and convert images to PDF. No upload, no signup, unlimited files. Files never leave the device; all work is client-side via pdf-lib and pdfjs-dist.
+
+## App
+
+- [Live app](https://pdf.oriz.in/): the PDF drafting table — drop PDFs, reorder pages, run any operation in-browser.
+- [Info page](https://chirag127.github.io/oriz-pdf/): about this project, features, and tech.
+- [Source repo](https://github.com/chirag127/oriz-pdf): MIT-licensed Astro + React source.
+
+## Operations
+
+- [Merge + reorder](https://pdf.oriz.in/): drag pages across multiple files into one merged PDF on the assembly strip.
+- [Split](https://pdf.oriz.in/): split one PDF into one file per N pages, downloaded as a batch.
+- [Rotate](https://pdf.oriz.in/): per-page rotate baked into the output PDF.
+- [Extract pages](https://pdf.oriz.in/): delete or keep any pages; the strip is the selection.
+- [Extract text](https://pdf.oriz.in/): text per page as .txt, plus optional AI summary and AI filename suggestion.
+- [Extract images](https://pdf.oriz.in/): pull embedded raster images out as PNG.
+- [Images to PDF](https://pdf.oriz.in/): drop PNG/JPG, get a page-per-image PDF.
+
+## Optional
+
+- AI polish via @chirag127/oz-ai (g4f multi-provider failover, no API key). If every provider is down, core tools still work.
