@@ -26,6 +26,7 @@ jobs:
       - name: "Resolve file deps to npm registry"
         run: |
           sed -i 's|"file:\.\./design-system/packages/oz-ai"|"^0.3.1"|g; s|"file:\.\./design-system/packages/oz-chrome"|"^0.1.0"|g; s|"file:\.\./design-system/packages/oz-file"|"^0.1.0"|g; s|"file:\.\./design-system/packages/oz-tokens-base"|"^0.1.0"|g' package.json
+          rm -f package-lock.json
 
       - run: npm install --legacy-peer-deps
 
