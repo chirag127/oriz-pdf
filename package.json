@@ -18,7 +18,7 @@
   "dependencies": {
     "@astrojs/react": "^5.0.5",
     "@astrojs/sitemap": "^3.2.0",
-    "@chirag127/oz-ai": "^0.3.1",
+    "@chirag127/oz-ai": "^0.3.3",
     "@chirag127/oz-chrome": "^0.1.0",
     "@chirag127/oz-file": "^0.1.0",
     "@chirag127/oz-tokens-base": "^0.1.0",
