@@ -16,8 +16,8 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.5",
-    "@astrojs/sitemap": "^3.2.0",
+    "@astrojs/react": "^7.1.2",
+    "@astrojs/sitemap": "^3.7.4",
     "@chirag127/oz-ai": "^0.3.3",
     "@chirag127/oz-chrome": "^0.1.0",
     "@chirag127/oz-file": "^0.1.0",
@@ -25,21 +25,21 @@
     "@fontsource-variable/jetbrains-mono": "^5.2.5",
     "@fontsource-variable/space-grotesk": "^5.2.5",
     "@tailwindcss/vite": "^4.3.1",
-    "@vite-pwa/astro": "^1.2.0",
-    "astro": "^6.4.8",
+    "@vite-pwa/astro": "^2.0.0",
+    "astro": "^7.4.4",
     "pdf-lib": "^1.17.1",
-    "pdfjs-dist": "^4.10.38",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
+    "pdfjs-dist": "^6.5.438",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
-    "@types/node": "^22.10.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "happy-dom": "^15.0.0",
-    "typescript": "^5.7.0",
-    "vitest": "^2.1.9",
-    "wrangler": "^4.102.0"
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "happy-dom": "^21.0.4",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5",
+    "wrangler": "^4.156.0"
   }
 }
