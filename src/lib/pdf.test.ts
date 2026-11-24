@@ -23,6 +23,18 @@ describe('parsePageRanges', () => {
   it('reversed range normalizes low..high', () => {
     expect(parsePageRanges('3-1', 10)).toEqual([0, 1, 2])
   })
+  it('bounds huge and reversed ranges to the document before iterating', () => {
+    expect(parsePageRanges('1-9007199254740993', 3)).toEqual([0, 1, 2])
+    expect(parsePageRanges('9007199254740993-1', 3)).toEqual([0, 1, 2])
+    expect(parsePageRanges('9007199254740992-9007199254740993', 3)).toEqual([])
+    expect(parsePageRanges('0-2', 3)).toEqual([0, 1])
+    expect(parsePageRanges('99-100', 3)).toEqual([])
+  })
+  it('rejects invalid document page counts', () => {
+    for (const count of [NaN, Infinity, -1, 0, 2.5, Number.MAX_SAFE_INTEGER + 1]) {
+      expect(parsePageRanges('1-3', count)).toEqual([])
+    }
+  })
   it('empty / junk → empty', () => {
     expect(parsePageRanges('', 10)).toEqual([])
     expect(parsePageRanges(' , ,', 10)).toEqual([])
