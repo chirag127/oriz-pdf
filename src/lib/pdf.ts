@@ -16,6 +16,7 @@ function toU8(b: Bytes): Uint8Array {
 
 /** Parse a page-range spec ("1-3,5,8-") into 0-based indices within [0,count). */
 export function parsePageRanges(spec: string, count: number): number[] {
+  if (!Number.isSafeInteger(count) || count <= 0) return []
   const out: number[] = []
   const seen = new Set<number>()
   for (const raw of spec.split(',')) {
@@ -25,8 +26,9 @@ export function parsePageRanges(spec: string, count: number): number[] {
     if (m) {
       const start = m[1] ? Number(m[1]) : 1
       const end = m[2] ? Number(m[2]) : count
-      const lo = Math.min(start, end)
-      const hi = Math.max(start, end)
+      // Clamp before iterating so oversized ranges cannot freeze the browser.
+      const lo = Math.max(1, Math.min(start, end))
+      const hi = Math.min(count, Math.max(start, end))
       for (let p = lo; p <= hi; p++) {
         const i = p - 1
         if (i >= 0 && i < count && !seen.has(i)) {
